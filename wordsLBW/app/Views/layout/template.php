@@ -11,7 +11,7 @@
 
     <!-- my css -->
     <link rel="stylesheet" href="/css/style.css">
-    <title>coba coba</title>
+    <title><?= $title; ?></title>
 </head>
 
 <body>

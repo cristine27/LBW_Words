@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 
 <h1>TRANSLATION</h1>
-<form method="POST" action="/Home/cek">
+<form method="POST" action="/Thesaurus/cek">
     <?= csrf_field(); ?>
     <div class="form-group">
         <label for="inputWords">input words</label>

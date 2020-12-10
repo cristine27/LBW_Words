@@ -6,7 +6,10 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		return view('home');
+		$data = [
+			'title' => 'Definition'
+		];
+		return view('home', $data);
 	}
 
 	public function getSinonim($input = '')
@@ -77,7 +80,7 @@ class Home extends BaseController
 			'sinonim' => $sinonim,
 			'antonim' => $antonim
 		];
-		return view('coba', $data);
+		return view('home', $data);
 	}
 
 	//--------------------------------------------------------------------
