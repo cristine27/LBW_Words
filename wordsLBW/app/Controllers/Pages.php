@@ -22,7 +22,8 @@ class Pages extends BaseController
                 'result' => [
                     'Definition' => 'Not yet'
                 ],
-                'resultRan' => $randomWord['results'] 
+                'resultRan' => $randomWord['results'],
+                'pronunciation' => 'none'
             ];
         }
         else{
@@ -36,8 +37,9 @@ class Pages extends BaseController
                 'resultRan' => [
                     '0' => [
                         'definition' => 'Sorry... Defintion for the Word not Available yet'
-                    ]
-                ]
+                        ]
+                    ],
+                'pronunciation' => 'none'
             ];
         }
         
@@ -171,7 +173,8 @@ class Pages extends BaseController
                 'word' => $word['word'],
                 'wordRan'   => $randomWord['word'],
                 'result' => $word['results'],
-                'resultRan' => $randomWord['results']
+                'resultRan' => $randomWord['results'],
+                'pronunciation' => $word['pronunciation']
                 
             ];
         }
@@ -184,8 +187,9 @@ class Pages extends BaseController
                 'resultRan' => [
                     '0' => [
                         'definition' => 'Sorry... Defintion for the Word not Available yet'
-                    ]
-                ]
+                        ]
+                    ],
+                'pronunciation' => $word['pronunciation']
             ];
         }
        

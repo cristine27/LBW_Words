@@ -22,23 +22,35 @@
 </div>
 <hr>
 
-<div class="container">
+<div class="container flex-wrap">
     <div class="row">
         <div class="col-7">
             <div class="card">
                 <h4 class="card-header"><?php echo $word ?></h4>
                 <div class="card-body">
                     <?php
+                    echo '<h5 class="card-title">Pronunctiation</h5>';
+                    echo '<p class="card-text">' . $pronunciation['all'] . '</p>';
                     foreach ($result as $key => $value) {
-                        echo '<h4 class="card-header">' . $key . '</h4>';
+                        echo '<h4 class="card-header mb-3">' . $key . '</h4>';
                         if (is_array($value)) {
                             foreach ($value as $key2 => $value2) {
                                 echo '<h5 class="card-title">' . $key2 . '</h5>';
+
                                 if (!is_array($value2)) {
                                     echo '<p>' . $value2 . '</p>';
                                 } else {
-                                    $value2 = json_encode($value2);
-                                    echo '<p>' . $value2 . '</p>';
+                                    echo '<div class="table-responsive flex-wrap mb-3">';
+                                    echo '<table class = "table table-bordered">';
+                                    echo '<tbody>';
+                                    echo '<tr>';
+                                    foreach ($value2 as $key3 => $value3) {
+                                        echo '<td scope="col">' . $value3 . '</td>';
+                                    }
+                                    echo '</tr>';
+                                    echo '</tbody>';
+                                    echo '</table>';
+                                    echo '</div>';
                                 }
                             }
                         } else {
