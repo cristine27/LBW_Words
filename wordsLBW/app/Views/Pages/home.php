@@ -30,10 +30,10 @@
                 <div class="card-body">
                     <?php
                     foreach ($result as $key => $value) {
-                        echo '<h4 class="card-title">' . $key . '</h4>';
+                        echo '<h4 class="card-header">' . $key . '</h4>';
                         if (is_array($value)) {
                             foreach ($value as $key2 => $value2) {
-                                echo '<h5 class="card-text">' . $key2 . '</h5>';
+                                echo '<h5 class="card-title">' . $key2 . '</h5>';
                                 if (!is_array($value2)) {
                                     echo '<p>' . $value2 . '</p>';
                                 } else {
@@ -44,6 +44,7 @@
                         } else {
                             echo '<p>' . $value . '</p>';
                         }
+                        echo '<hr>';
                     }
                     ?>
                 </div>
