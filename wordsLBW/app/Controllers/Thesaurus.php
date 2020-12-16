@@ -9,7 +9,7 @@ class Thesaurus extends BaseController
         $data = [
             'title' => 'Thesaurus'
         ];
-        return view('thesaurus', $data);
+        return view('Pages/thesaurus', $data);
     }
 
     public function getSinonim($input = '')

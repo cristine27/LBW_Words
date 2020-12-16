@@ -29,8 +29,15 @@
                 <h4 class="card-header"><?php echo $word ?></h4>
                 <div class="card-body">
                     <?php
-                    echo '<h5 class="card-title">Pronunctiation</h5>';
-                    echo '<p class="card-text">' . $pronunciation['all'] . '</p>';
+                    echo '<h4 class="card-header mb-3">Pronunctiation</h4>';
+                    echo '<table class="table table-bordered">';
+                    foreach ($pronunciation as $key => $value) {
+                        echo '<tr>';
+                        echo '<th scope="col">'.$key.'</th>';
+                        echo '<td>' . $value . '</td>';
+                        echo '</tr>' ;
+                    }
+                    echo '</table>';
                     foreach ($result as $key => $value) {
                         echo '<h4 class="card-header mb-3">' . $key . '</h4>';
                         if (is_array($value)) {

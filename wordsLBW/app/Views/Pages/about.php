@@ -31,7 +31,7 @@
     </div>
     <div class="row">
         <div class="card w-90">
-            <h3 class="card-header">TeamS</h3>
+            <h3 class="card-header">Teams</h3>
             <div class="card-body">
                 <p class="card-text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
