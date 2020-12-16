@@ -31,7 +31,7 @@
     </div>
     <div class="row">
         <div class="card w-90">
-            <h3 class="card-header">Team</h3>
+            <h3 class="card-header">TeamS</h3>
             <div class="card-body">
                 <p class="card-text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -39,6 +39,45 @@
                     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt blablabla
                 </p>
+                <div class="row">
+                    <div class="col-3">
+                        <h4 class="card-header text-center">Nama</h4>
+                        <div class="card">
+                            <img src="../img/logo.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <h4 class="card-header text-center">Nama</h4>
+                        <div class="card">
+                            <img src="../img/logo.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <h4 class="card-header text-center">Nama</h4>
+                        <div class="card">
+                            <img src="../img/logo.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <h4 class="card-header text-center">Nama</h4>
+                        <div class="card">
+                            <img src="../img/logo.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

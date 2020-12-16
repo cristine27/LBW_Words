@@ -23,7 +23,9 @@ class Pages extends BaseController
                     'Definition' => 'Not yet'
                 ],
                 'resultRan' => $randomWord['results'],
-                'pronunciation' => 'none'
+                'pronunciation' => [
+					'all' => 'none'
+				]
             ];
         }
         else{
@@ -39,7 +41,9 @@ class Pages extends BaseController
                         'definition' => 'Sorry... Defintion for the Word not Available yet'
                         ]
                     ],
-                'pronunciation' => 'none'
+                'pronunciation' => [
+					'all' => 'none'
+				]
             ];
         }
         
