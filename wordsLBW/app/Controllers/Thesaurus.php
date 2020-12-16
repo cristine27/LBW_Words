@@ -77,11 +77,12 @@ class Thesaurus extends BaseController
         $antonim = $this->getAntonim($input);
 
         $data['data'] = [
-            'flag'  => '1',
             'title'   => 'Thesaurus',
             'sinonim' => $sinonim,
             'antonim' => $antonim
         ];
+        define('Flag2', 1);
+
         return view('thesaurus', $data);
     }
 

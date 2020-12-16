@@ -75,3 +75,12 @@ defined('EXIT_USER_INPUT')     || define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       || define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      || define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      || define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+
+/**
+ * Global Variabel
+ * Flag1 = untuk trigger apakah user telah memasukkan words pada page definition
+ * Flag2 = untuk trigger apakah user telah memasukkan words pada page thesaurus
+ */
+defined('Flag1') || define('Flag1', 0);
+defined('Flag2') || define('Flag2', 0);

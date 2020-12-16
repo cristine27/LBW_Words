@@ -10,13 +10,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Definition <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/home">Definition <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Thesaurus</a>
+                    <a class="nav-link" href="/thesaurus">Thesaurus</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="/about">About</a>
                 </li>
             </ul>
         </div>
