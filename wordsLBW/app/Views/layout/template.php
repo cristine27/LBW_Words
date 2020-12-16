@@ -11,7 +11,7 @@
 
     <!-- my css -->
     <link rel="stylesheet" href="/css/style.css">
-    <title>WORDS LBW</title>
+    <title><?php echo $title; ?></title>
 </head>
 
 <body>
