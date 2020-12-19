@@ -9,43 +9,42 @@ class Pages extends BaseController
 	protected $thesaurus;
 	protected $about;
 
-    public function __construct() {
+	public function __construct()
+	{
 		$this->definition = new Definition();
 		$this->thesaurus = new Thesaurus();
 		$this->about = new About();
-    }
+	}
 
 	public function index()
 	{
-        return $this->definition->index();
+		return $this->definition->index();
 	}
 
 	public function thesaurus()
 	{
-        return $this->thesaurus->index();
+		return $this->thesaurus->index();
 	}
 
 	public function about()
 	{
-        return $this->about->index();
+		return $this->about->index();
 	}
 
-    public function createWordDef()
-    {
+	public function createWordDef()
+	{
 		$input = $this->request->getVar('input');
-        return $this->definition->createWordDef($input);
+		return $this->definition->createWordDef($input);
 	}
-	
-	public function createAntonym()
-    {
+
+	public function createRes()
+	{
 		$input = $this->request->getVar('input');
-        
+		return $this->thesaurus->createRes($input);
 	}
-	
+
 	public function createSynonym()
-    {
+	{
 		$input = $this->request->getVar('input');
-    }
-
-
+	}
 }

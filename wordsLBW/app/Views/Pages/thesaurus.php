@@ -6,27 +6,15 @@
 <div class="container">
     <div class="row  d-flex justify-content-center text-center">
         <div class="jumbotron w-100 my-4">
-            <h1 class="display-4">Thesaurus</h1>
+            <h1 class="display-4"><?php echo $title; ?></h1>
             <p class="lead">Synonyms and Antonyms of a Word</p>
             <hr class="my-4">
             <p>Dictionary for Synonyms and Antonyms</p>
             <p class="lead">
-                <form method="POST" action="/Home/cek" class="d-flex">
+                <form method="POST" action="/Pages/createRes" class="d-flex">
                     <?= csrf_field(); ?>
-                    <div class="input-group mb-3 ">
-                        <div class="input-group-prepend mr-3">
-                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                                <div role="separator" class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Separated link</a>
-                            </div>
-                        </div>
-                        <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                        <button class="btn btn-outline-success ml-3" type="submit">Submit</button>
-                    </div>
+                    <input type="text" id="inputWords" name="input" class="form-control" aria-label="Text input with dropdown button" placeholder="Type your word">
+                    <button class="btn btn-outline-success ml-3" type="submit">Submit</button>
                 </form>
             </p>
         </div>
@@ -38,13 +26,65 @@
     <div class="row">
         <div class="col-7">
             <div class="card">
-                <h5 class="card-header">Result</h5>
+                <h5 class="card-header"><?php echo $word ?></h5>
                 <div class="card-body">
-                    <h5 class="card-title">Pronounciation</h5>
+                    <!-- <h5 class="card-title">Pronounciation</h5>
                     <p>bʊk</p>
                     <h5 class="card-title">Noun</h5>
                     <p class="card-text">physical objects consisting of a number of pages bound together</p>
-                    <h5 class="card-title">Examples</h5>
+                    <h5 class="card-title">Examples</h5> -->
+
+                    <?php
+                    echo '<h4 class="card-header mb-3"> Pronunciation</h4>';
+                    echo '<table class="table table-bordered">';
+                    foreach ($pronunciation as $key => $value) {
+                        echo '<tr>';
+                        echo '<th scope="col">' . $key . '</th>';
+                        echo '<td>' . $value . '</td>';
+                        echo '</tr>';
+                    }
+                    echo '</table>';
+
+                    ?>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-body">
+                        <?php
+                        echo '<h4 class="card-header mb-3"> Synonyms</h4>';
+                        echo '<table class="table table-bordered">';
+                        foreach ($sinonim as $key => $value) {
+                            $count = $key + 1;
+                            echo '<tr>';
+                            echo '<th scope="col">' . $count . '</th>';
+                            echo '<td>' . $value . '</td>';
+                            echo '</tr>';
+                        }
+                        echo '</table>';
+
+                        ?>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-body">
+                        <?php
+                        echo '<h4 class="card-header mb-3"> Antonyms</h4>';
+                        echo '<table class="table table-bordered">';
+                        foreach ($antonim as $key => $value) {
+                            $count = $key + 1;
+                            echo '<tr>';
+                            echo '<th scope="col">' . $count . '</th>';
+                            echo '<td>' . $value . '</td>';
+                            echo '</tr>';
+                        }
+                        echo '</table>';
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -53,10 +93,9 @@
                 <h5 class="card-header">Word of The Day</h5>
                 <div class="card-body">
                     <h5 class="card-title">Word</h5>
-                    <p class="card-text">deerberry</p>
+                    <p class="card-text"><?php echo $wordRan; ?></p>
                     <h5 class="card-title">Definition</h5>
-                    <p class="card-text">small branching blueberry common in marshy areas of the eastern United States having greenish or
-                        yellowish unpalatable berries reputedly eaten by deer</p>
+                    <p class="card-text"><?php echo $resultRan[0]['definition'] ?></p>
                 </div>
             </div>
         </div>
