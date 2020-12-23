@@ -9,3 +9,67 @@
   [data-theme="dark"] .bg-white {
       background-color: #000 !important;
   }
+
+  .carousel-item img {
+    width: auto;
+    height: 450px;
+    max-height: 450px;
+  }
+  .jumbotron{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  #defBackground{
+    background-image: url('../img/backdround4.jpg');
+    /* background-image: radial-gradient(rgb(91, 39, 177) 15%, rgb(38, 9, 107) 60%); */
+    color: white;
+    background-size: cover;
+    
+  }
+  #wod{
+    background-image: url('../img/background2.jpg');
+    background-size: cover;
+    color: white;
+    border: 1px solid;
+    box-shadow: 5px 5px 10px #6e6b6b;
+    font-family: monospace;
+  }
+  
+  hr{
+    border-top: 1px solid white;
+
+  }
+  #hrCont{
+    border-top: 1px solid grey;
+    box-shadow: 0px 5px 10px rgb(160, 12, 197);
+  }
+  footer{
+    color: white;
+  }
+  nav{
+   background-color: rgba(19, 9, 75, 0.911);
+  }
+  #contentResult{
+    background-size: cover;
+    box-shadow: 5px 0px 10px grey;
+    font-family: sans-serif;
+    font-size: medium;
+  }
+ #teams{
+   font-family: cursive;
+   background-image: url('../img/background.jpg');
+   background-size: cover;
+   color: white;
+   box-shadow: 10px 10px 20px rgb(65, 59, 66);
+
+ }
+
+ #background{
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-image: url('../img/background2.jpg');
+  background-size: cover;
+  color: white;
+  box-shadow: 10px 10px 20px rgb(65, 59, 66);
+
+}
+
+  

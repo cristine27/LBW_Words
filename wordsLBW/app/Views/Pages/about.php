@@ -2,10 +2,9 @@
 
 <?= $this->section('content'); ?>
 
-
-<div class="container mb-4">
+<div class="container-fluid">
     <div class="row  d-flex justify-content-center text-center">
-        <div class="jumbotron w-100 my-4">
+        <div id="defBackground" class="jumbotron w-100 ">
             <h1 class="display-4">About</h1>
             <p class="lead">Words LBW</p>
             <hr class="my-4">
@@ -15,9 +14,11 @@
     </div>
 </div>
 
+<hr>
+
 <div class="container">
     <div class="row">
-        <div class="card w-90 mb-3">
+        <div id="background" class="card w-90 mb-3 text-center">
             <h4 class="card-header">BACKGROUND</h4>
             <div class="card-body">
                 <p class="card-text">
@@ -30,7 +31,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="card w-90">
+        <div id="teams" class="card w-90 text-center">
             <h3 class="card-header">Teams</h3>
             <div class="card-body">
                 <p class="card-text">

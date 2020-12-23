@@ -31,7 +31,7 @@ class Thesaurus extends BaseController
             ];
         } else {
             $data = [
-                'title'  => 'Definition',
+                'title'  => 'Thesaurus',
                 'word' => 'None',
                 'wordRan'   => $randomWord['word'],
                 'sinonim' => [
