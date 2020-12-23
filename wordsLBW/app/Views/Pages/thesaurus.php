@@ -22,11 +22,11 @@
 
 <hr>
 
-<div class="container-fluid px-4">
+<div id="result" class="container-fluid px-4">
     <div class="row">
         <div class="col-8">
             <div id="contentResult" >
-                <h2 class="card-header text-center " style="color : darkblue ; font-style : italic "><strong><?php echo $word ?></strong></h2>
+                <h2 id="textD" class="card-header text-center " style="color : darkblue ; font-style : italic "><strong><?php echo $word ?></strong></h2>
                 <div class="card-body">
                     <!-- <h5 class="card-title">Pronounciation</h5>
                     <p>bʊk</p>

@@ -17,9 +17,114 @@
 </head>
 
 <body>
+
     <?= $this->include('layout/navbar'); ?>
 
     <?= $this->renderSection('content'); ?>
+
+    <div id="preRes" class="container-fluid px-4">
+        <div class="row">
+            <div class="col">
+                <div class="row justify-content-center py-2">
+                    <div class="col-8 my-2">
+                        <h1 class="text-center">Oxford Dictionary</h1>
+                        <p class="text-center ">
+                            The Oxford English Dictionary (OED) is the principal historical dictionary of the English language, published by Oxford University Press (OUP). It traces the historical development of the English language,
+                            providing a comprehensive resource to scholars and academic researchers, as well as describing usage in its many variations throughout the world. The second edition, comprising 21,728 pages in 20 volumes,
+                            was published in 1989.
+                        </p>
+                        <hr class="hrCont">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h3 class="text-center"> Features</h3>
+                        <hr class="hrCont">
+                    </div>
+                </div>
+                <div class="row justify-content-center py-4">
+                    <div class="col-8">
+                        <div id="carouselExampleDark" class="carousel carousel-dark slide " data-bs-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"></li>
+                                <li data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></li>
+                                <li data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" data-bs-interval="10000">
+                                    <img src="../img/home2.jpg" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>First slide label</h5>
+                                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item" data-bs-interval="2000">
+                                    <img src="../img/home3.jpg" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Second slide label</h5>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="../img/home4.jpg" class="d-block w-100" alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Third slide label</h5>
+                                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleDark" role="button" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleDark" role="button" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center py-3 features">
+                    <div class="col-sm-5">
+                        <div class="card my-2">
+                            <div class="card-body text-center" >
+                                <h3 class="card-Header text-center"><strong>Definition</strong> </h3>
+                                <p class="card-text text-center">
+                                    Definition page provided you this features in the list below.
+                                </p>
+                                <hr class="hrCont">
+                                    <p >Pronunciation</p>
+                                    <p >Definition</p>
+                                    <p >Part Of Speech</p>
+                                    <p >Example</p>
+                                    <p >Etc.</p>
+                                <a href="/" class="btn btn-primary mt-2">Go To Definition</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="card my-2">
+                            <div class="card-body text-center">
+                                <h3 class="card-title text-center"><strong>Thesaurus</strong></h3>
+                                <p class="card-text text-center">
+                                    Thesaurus page provided you this features in the list below.
+                                </p>
+                                <hr class="hrCont">
+                                    <p >Pronunciation</p>
+                                    <p>Synonyms</p>
+                                    <p >Antonyms</p>
+                                    <p >Example</p>
+                                    <p >Etc.</p>
+                                <a href="/pages/thesaurus" class=" btn btn-primary mt-2">Go To Thesaurus</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <footer class=" container-fluid page-footer font-small blue mt-4 bg-dark">
         <!-- Copyright -->
@@ -53,13 +158,27 @@
                 return this.href == url;
             }).parent().addClass('active');
         });
-        // var myCarousel = document.querySelector('#carouselExampleDark')
-        // if (exists(myCarousel)) {
-        //     var carousel = new bootstrap.Carousel(myCarousel, {
-        //     interval: 3000,
-        //     wrap: false
-        // })
-        //}
+
+        var content = document.getElementById('textD').textContent;
+        var pre = document.getElementById('preRes');
+        var re = document.getElementById('result');
+        if (content == 'None') {
+            pre.style.display = '';
+            re.style.display = 'none';
+        } else if(content == 'About'){
+            pre.style.display = 'none';
+        }else {
+            re.style.display = '';
+            pre.style.display = 'none';
+        }
+
+        var myCarousel = document.querySelector('#carouselExampleDark')
+        if (myCarousel) {
+            var carousel = new bootstrap.Carousel(myCarousel, {
+                interval: 3000,
+                wrap: false
+            })
+        }
     </script>
 
 </body>

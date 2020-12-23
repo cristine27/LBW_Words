@@ -24,9 +24,8 @@ class Definition extends BaseController
                     'Definition' => 'Not yet'
                 ],
                 'resultRan' => $randomWord['results'],
-                'pronunciation' => [
-                    'all' => 'none'
-                ]
+                'pronunciation' => 'none',
+                'example' => 'none'
             ];
         } else {
             $data = [
@@ -41,9 +40,8 @@ class Definition extends BaseController
                         'definition' => 'Sorry... Defintion for the Word not Available yet'
                     ]
                 ],
-                'pronunciation' => [
-                    'all' => 'none'
-                ]
+                'pronunciation' => 'none',
+                'example' => 'none'
             ];
         }
 
@@ -106,6 +104,34 @@ class Definition extends BaseController
         return $data;
     }
 
+    public function getExample($input)
+    {
+        $curl = curl_init();
+
+        curl_setopt_array($curl, [
+            CURLOPT_URL => "https://wordsapiv1.p.rapidapi.com/words/" . $input . "/examples",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => [
+                "x-rapidapi-host: wordsapiv1.p.rapidapi.com",
+                "x-rapidapi-key: d0464ecc57mshc3dacd30a18dfb7p1ffc18jsn89d00824bcad",
+                "Content-Type: application/json"
+            ],
+        ]);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+        $response = curl_exec($curl);
+        $data = json_decode($response, true);
+        curl_close($curl);
+
+        return $data;
+    }
+
 
     public function getRandom()
     {
@@ -142,15 +168,19 @@ class Definition extends BaseController
         $word = $this->getWordAtr($input);
         $pronunciation = $this->getPronunciation($input);
         $randomWord = $this->randomWord;
+        $examples = $this->getExample($input);
+        
+        
 
         if (array_key_exists('results', $randomWord)) {
             $data = [
                 'title'  => 'Definition',
                 'word' => $word['word'],
                 'wordRan'   => $randomWord['word'],
-                'result' => $word['results'],
+                'result' => $word,
                 'resultRan' => $randomWord['results'],
-                'pronunciation' => $pronunciation['pronunciation']
+                'pronunciation' => $pronunciation,
+                'example' => $examples
 
             ];
         } else {
@@ -158,13 +188,15 @@ class Definition extends BaseController
                 'title'  => 'Definition',
                 'word' => $word['word'],
                 'wordRan'   => $randomWord['word'],
-                'result' => $word['results'],
+                'result' => $word,
                 'resultRan' => [
                     '0' => [
                         'definition' => 'Sorry... Defintion for the Word not Available yet'
                     ]
                 ],
-                'pronunciation' => $pronunciation['pronunciation']
+                'pronunciation' => $pronunciation,
+                'example' => $examples
+
             ];
         }
 

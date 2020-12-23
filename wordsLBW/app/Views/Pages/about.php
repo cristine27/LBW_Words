@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="row  d-flex justify-content-center text-center">
         <div id="defBackground" class="jumbotron w-100 ">
-            <h1 class="display-4">About</h1>
+            <h1 id="textD" class="display-4">About</h1>
             <p class="lead">Words LBW</p>
             <hr class="my-4">
             <p>Dictionary for Synonyms and Antonyms</p>

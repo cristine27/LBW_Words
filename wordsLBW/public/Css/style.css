@@ -1,5 +1,5 @@
   [data-theme="dark"] {
-      background-color: #111 !important;
+      background-color: rgba(3, 3, 3, 0.555) !important;
   }
 
   [data-theme="dark"] .bg-light {
@@ -42,6 +42,11 @@
     border-top: 1px solid grey;
     box-shadow: 0px 5px 10px rgb(160, 12, 197);
   }
+
+  .hrCont{
+    border-top: 1px solid grey;
+    box-shadow: 0px 5px 10px rgb(160, 12, 197);
+  }
   footer{
     color: white;
   }
@@ -64,12 +69,35 @@
  }
 
  #background{
-   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-image: url('../img/background2.jpg');
   background-size: cover;
   color: white;
   box-shadow: 10px 10px 20px rgb(65, 59, 66);
 
 }
+
+#preRes{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-size: cover;
+  box-shadow: 10px 10px 20px rgb(65, 59, 66);
+}
+
+#preRes .card{
+  color: black;
+  background-color: rgba(245, 245, 245, 1);
+  opacity: .7;
+  box-shadow: 10px 10px 20px rgb(59, 56, 59);
+
+}
+.carousel-caption{
+  color: #000;
+}
+.features{
+  background-image: url('../img/backdround4.jpg');
+  background-size: cover;
+  box-shadow: 10px 10px 20px rgb(59, 56, 59);
+}
+
 
   
