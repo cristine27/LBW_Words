@@ -22,40 +22,39 @@
             <h4 class="card-header">BACKGROUND</h4>
             <div class="card-body">
                 <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt blablabla
+                    English is the world's most widely used language in newspaper publishing, book publishing, international telecommunications,
+                    scientific publishing, international trade, mass entertainment, and diplomacy. Although in most countries English is not an
+                    official language, it is currently the language most often taught as a foreign language. People used to learn this language
+                    by using a dictionary, but that way is not practical because people have to take an extra space to carry a dictionary arroud.
+                    Beside the extra space, it will take an extra time to search a word throughout a dictionary. In order to solve that problem,
+                    a website based on a dictionary was developed. With this website people can learn and search english words anywhere and anytime.
                 </p>
             </div>
         </div>
     </div>
     <div class="row">
         <div id="teams" class="card w-90 text-center">
-            <h3 class="card-header">Teams</h3>
+            <h3 class="card-header">Meet our team</h3>
             <div class="card-body">
                 <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt blablabla
+                    These are the people that makes the magic happen.
                 </p>
                 <div class="row">
                     <div class="col-3">
-                        <h4 class="card-header text-center">Nama</h4>
+                        <h4 class="card-header text-center">Cristine</h4>
                         <div class="card">
                             <img src="../img/logo.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text" style="color: black;">Fullstack Developer</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-3">
-                        <h4 class="card-header text-center">Nama</h4>
+                        <h4 class="card-header text-center">Dionisius</h4>
                         <div class="card">
                             <img src="../img/logo.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text" style="color: black;">Fullstack Developer</p>
                             </div>
                         </div>
                     </div>
