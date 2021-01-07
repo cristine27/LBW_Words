@@ -75,7 +75,7 @@
                             $count = $key + 1;
                             echo '<tr>';
                             echo '<th scope="col">' . $count . '</th>';
-                            echo '<td>' . $value . '</td>';
+                            echo '<td><a href="#">' . $value . '</a></td>';
                             echo '</tr>';
                         }
                         echo '</table>';
