@@ -9,7 +9,7 @@
             <p class="lead">Oxford English Dictionary, Thesaurus, and English Translator</p>
             <hr class="my-4">
             <p class="mb-4">Dictionary for Definition of a Word</p>
-            <form method="POST" action="/Pages/createWordDef" class="d-flex justify-content-center">
+            <form method="GET" action="/Pages/createWordDef" class="d-flex justify-content-center">
                 <?= csrf_field(); ?>
                 <input class="form-control rounded-pill w-50" type="text" id="inputWords" name="input" placeholder="Type your word" aria-label="Search">
                 <button class="btn btn-success rounded-circle ml-4" type="submit"><i class="fa fa-search"></i></button>
@@ -37,7 +37,7 @@
                             echo '</tr>';
                         }
                     }
-                   
+
                     echo '<hr>';
                     echo '</table>';
                     if (is_array($result) && isset($result['results'])) {
@@ -47,7 +47,7 @@
                                 foreach ($value as $key2 => $value2) {
                                     echo '<hr id= "hrCont">';
                                     echo '<h4 class="card-title" style="color : darkblue ; font-style : italic "><strong>' . $key2 . '</strong></h4>';
-    
+
                                     if (!is_array($value2)) {
                                         echo '<li class= "px-2 py-4"><strong>' . $value2 . '</strong></li>';
                                     } else {
@@ -70,7 +70,7 @@
                             echo '<hr>';
                         }
                     }
-                    
+
                     ?>
                 </div>
             </div>

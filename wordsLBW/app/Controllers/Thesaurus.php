@@ -5,6 +5,9 @@ namespace App\Controllers;
 class Thesaurus extends BaseController
 {
     protected $randomWord;
+    protected $sinonim;
+    protected $sinonimExample;
+
     public function __construct()
     {
         $this->randomWord = $this->getRandom();
@@ -27,7 +30,8 @@ class Thesaurus extends BaseController
                 'resultRan' => $randomWord['results'],
                 'pronunciation' => [
                     'all' => 'none'
-                ]
+                ],
+                'example' => $this->sinonimExample
             ];
         } else {
             $data = [
@@ -47,7 +51,8 @@ class Thesaurus extends BaseController
                 ],
                 'pronunciation' => [
                     'all' => 'none'
-                ]
+                ],
+                'example' => $this->sinonimExample
             ];
         }
 
@@ -171,31 +176,33 @@ class Thesaurus extends BaseController
     public function createRes($input)
     {
         $pronunciation = $this->getPronunciation($input);
-        $sinonim = $this->getSinonim($input);
+        $this->sinonim = $this->getSinonim($input);
         $antonim = $this->getAntonim($input);
         $randomWord = $this->randomWord;
+        $this->PrepareSinonimExample();
 
         if (count($antonim['antonyms']) == 0) {
             array_fill_keys($antonim['antonyms'], 'sorry, antonyms for this word is not available');
         }
-        if (count($sinonim['synonyms']) == 0) {
-            array_fill_keys($sinonim['synonyms'], 'sorry, synonyms for this word is not available');
+        if (count($this->sinonim['synonyms']) == 0) {
+            array_fill_keys($this->sinonim['synonyms'], 'sorry, synonyms for this word is not available');
         }
         if (array_key_exists('results', $randomWord)) {
             $data = [
                 'title' => 'Thesaurus',
-                'word' => $sinonim['word'],
-                'sinonim' => $sinonim['synonyms'],
+                'word' => $this->sinonim['word'],
+                'sinonim' => $this->sinonim['synonyms'],
                 'antonim' => $antonim['antonyms'],
                 'wordRan' => $randomWord['word'],
                 'resultRan' => $randomWord['results'],
-                'pronunciation' => $pronunciation['pronunciation']
+                'pronunciation' => $pronunciation['pronunciation'],
+                'example' => $this->sinonimExample
             ];
         } else {
             $data = [
                 'title' => 'Thesaurus',
-                'word' => $sinonim['word'],
-                'sinonim' => $sinonim['synonyms'],
+                'word' => $this->sinonim['word'],
+                'sinonim' => $this->sinonim['synonyms'],
                 'antonim' => $antonim['antonyms'],
                 'wordRan' => $randomWord['word'],
                 'resultRan' => [
@@ -203,12 +210,53 @@ class Thesaurus extends BaseController
                         'definition' => 'Sorry... Defintion for the Word not Available yet'
                     ]
                 ],
-                'pronunciation' => $pronunciation['pronunciation']
+                'pronunciation' => $pronunciation['pronunciation'],
+                'example' => $this->sinonimExample
             ];
         }
         return view('Pages/thesaurus', $data);
     }
 
+    public function getExample($input)
+    {
+        $curl = curl_init();
+
+        curl_setopt_array($curl, [
+            CURLOPT_URL => "https://wordsapiv1.p.rapidapi.com/words/" . $input . "/examples",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => [
+                "x-rapidapi-host: wordsapiv1.p.rapidapi.com",
+                "x-rapidapi-key: d0464ecc57mshc3dacd30a18dfb7p1ffc18jsn89d00824bcad",
+                "Content-Type: application/json"
+            ],
+        ]);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+        $response = curl_exec($curl);
+        curl_close($curl);
+
+        return $response;
+    }
+
+    public function PrepareSinonimExample()
+    {
+        foreach ($this->sinonim['synonyms'] as $key  => $value) {
+            $new_id = count((array)$this->sinonimExample);
+            if ($new_id != 0) {
+                $new_id++;
+            }
+
+            $temp = $this->getExample($value);
+
+            $this->sinonimExample[$new_id] = json_decode($temp, true);
+        }
+    }
     //--------------------------------------------------------------------
 
 }

@@ -10,11 +10,11 @@
             <hr class="my-4">
             <p>Dictionary for Synonyms and Antonyms</p>
             <p class="lead">
-                <form method="POST" action="/Pages/createRes" class="d-flex justify-content-center">
-                    <?= csrf_field(); ?>
-                    <input type="text" id="inputWords" name="input" class="form-control rounded-pill w-50" aria-label="Text input with dropdown button" placeholder="Type your word">
-                    <button class="btn btn-success ml-3 rounded-circle" type="submit"><i class=" fa fa-search"></i></button>
-                </form>
+            <form method="GET" action="/Pages/createRes" class="d-flex justify-content-center">
+                <?= csrf_field(); ?>
+                <input type="text" id="inputWords" name="input" class="form-control rounded-pill w-50" aria-label="Text input with dropdown button" placeholder="Type your word">
+                <button class="btn btn-success ml-3 rounded-circle" type="submit"><i class=" fa fa-search"></i></button>
+            </form>
             </p>
         </div>
     </div>
@@ -25,7 +25,7 @@
 <div id="result" class="container-fluid px-4">
     <div class="row">
         <div class="col-8">
-            <div id="contentResult" >
+            <div id="contentResult">
                 <h2 id="textD" class="card-header text-center " style="color : darkblue ; font-style : italic "><strong><?php echo $word ?></strong></h2>
                 <div class="card-body">
                     <!-- <h5 class="card-title">Pronounciation</h5>
@@ -57,7 +57,7 @@
                             $count = $key + 1;
                             echo '<tr>';
                             echo '<th scope="col">' . $count . '</th>';
-                            echo '<td>' . $value . '</td>';
+                            echo '<td><a href="#">' . $value . '</a></td>';
                             echo '</tr>';
                         }
                         echo '</table>';
@@ -88,14 +88,23 @@
         </div>
 
         <div class="col-4">
-            <div id="wod" class="card w-100 text-center">
-                <h5 class="card-header">Word of The Day</h5>
-                <div class="card-body">
-                    <h2 class="card-text"><?php echo $wordRan; ?></h2>
-                    <hr>
-                    <h4 class="card-title">Definition</h4>
-                    <h5 class="card-text"><?php echo $resultRan[0]['definition'] ?></h5>
+            <div class="row">
+                <div class="col">
+                    <div id="wod" class="card w-100 text-center">
+                        <h5 class="card-header">Word of The Day</h5>
+                        <div class="card-body">
+                            <h2 class="card-text"><?php echo $wordRan; ?></h2>
+                            <hr>
+                            <h4 class="card-title">Definition</h4>
+                            <h5 class="card-text"><?php echo $resultRan[0]['definition'] ?></h5>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col">
+
             </div>
         </div>
     </div>
