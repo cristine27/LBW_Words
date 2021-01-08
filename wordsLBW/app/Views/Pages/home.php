@@ -45,23 +45,39 @@
                             echo '<h4 class="card-header mb-3 bg-warning">' . $key . '</h4>';
                             if (is_array($value)) {
                                 foreach ($value as $key2 => $value2) {
-                                    echo '<hr id= "hrCont">';
-                                    echo '<h4 class="card-title" style="color : darkblue ; font-style : italic "><strong>' . $key2 . '</strong></h4>';
+                                    if ($key2 == "definition" || $key2 == "partOfSpeech" || $key2 == "typeOf" || $key2 == "hasTypes" || $key2 == "derivation") {
+                                        echo '<hr id= "hrCont">';
+                                        echo '<h4 class="card-title" style="color : darkblue ; font-style : italic "><strong>' . $key2 . '</strong></h4>';
+                                        if (!is_array($value2)) {
 
-                                    if (!is_array($value2)) {
-                                        echo '<li class= "px-2 py-4"><strong>' . $value2 . '</strong></li>';
-                                    } else {
-                                        echo '<div class="  table-responsive flex-wrap mb-3">';
-                                        echo '<table class = " table table-bordered">';
-                                        echo '<tbody>';
-                                        echo '<tr>';
-                                        foreach ($value2 as $key3 => $value3) {
-                                            echo '<td scope="col"><strong>' . $value3 . '</strong></td>';
+                                            echo '<li class= "px-2 py-4"><strong>' . $value2 . '</strong></li>';
+
+                                            if ($key2 == "definition") {
+                                                echo '<h6>click to know more about : </h6>';
+                                                $splited = preg_split("/[^\w]*([\s]+[^\w]*|$)/", $value2, -1, PREG_SPLIT_NO_EMPTY);
+
+                                                $kata = count($splited);
+                                                $i = 0;
+                                                while ($i < $kata) {
+                                                    if (strlen($splited[$i]) > 3) {
+                                                        echo '<a href="/Pages/createWordDef?input=' . $splited[$i] . '" class="badge badge-primary ml-4">' . $splited[$i] . '</a>';
+                                                    }
+                                                    $i++;
+                                                }
+                                            }
+                                        } else {
+                                            echo '<div class="  table-responsive flex-wrap mb-3">';
+                                            echo '<table class = " table table-bordered">';
+                                            echo '<tbody>';
+                                            echo '<tr>';
+                                            foreach ($value2 as $key3 => $value3) {
+                                                echo '<td scope="col"><strong>' . $value3 . '</strong></td>';
+                                            }
+                                            echo '</tr>';
+                                            echo '</tbody>';
+                                            echo '</table>';
+                                            echo '</div>';
                                         }
-                                        echo '</tr>';
-                                        echo '</tbody>';
-                                        echo '</table>';
-                                        echo '</div>';
                                     }
                                 }
                             } else {
