@@ -31,7 +31,9 @@ class Thesaurus extends BaseController
                 'pronunciation' => [
                     'all' => 'none'
                 ],
-                'example' => $this->sinonimExample
+                'example' => [
+                    '0' => 'none'
+                ]
             ];
         } else {
             $data = [
@@ -52,7 +54,9 @@ class Thesaurus extends BaseController
                 'pronunciation' => [
                     'all' => 'none'
                 ],
-                'example' => $this->sinonimExample
+                'example' => [
+                    '0' => 'none'
+                ]
             ];
         }
 

@@ -57,28 +57,10 @@
                             $count = $key + 1;
                             echo '<tr>';
                             echo '<th scope="col">' . $count . '</th>';
-                            echo '<td><a class="btn btn-primary" data-toggle="collapse" href="#collapsedata" role="button" aria-expanded="false" aria-controls="collapseExample">' . $value . '</a></td>';
-                            echo '<div class="collapse" id="collapsedata">';
-                            echo '<div class="card card-body">';
-
-                            if (is_array($example[$key])) {
-                                echo '<h2 style="color : darkblue ; font-style : italic "><strong>' . $example[$key]['word'] . '</strong></h2>';
-
-                                echo '<ul class="list-group list-group-flush">';
-
-                                foreach ($example[$key]['examples'] as $key => $value) {
-                                    echo '<li class="list-group-item">' . $value . '</li>';
-                                }
-                                echo '</ul>';
-                            } else {
-                                echo '<h2>' . $example[$key]['word'] . '</h2>';
-                            }
-                            echo '</div>';
-                            echo '</div>';
+                            echo '<td><a href="/Pages/createWordDef?input=' . $value . '">' . $value . '</a></td>';
                             echo '</tr>';
                         }
                         echo '</table>';
-
                         ?>
                     </div>
                 </div>
@@ -118,10 +100,29 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row my-3">
-            <div class="col">
 
+            <div class="row my-3">
+                <div class="col">
+                    <?php
+                    echo '<h2>Example</h2>';
+                    echo '<hr id= "hrCont">';
+                    foreach ($sinonim as $key => $value) {
+
+                        if (is_array($example[$key])) {
+                            echo '<h4 style="color : darkblue ; font-style : italic "><strong>' . $example[$key]['word'] . '</strong></h2>';
+
+                            echo '<ul class="list-group list-group-flush">';
+
+                            foreach ($example[$key]['examples'] as $key => $value) {
+                                echo '<li class="list-group-item">' . $value . '</li>';
+                            }
+                            echo '</ul>';
+                        } else {
+                            echo '<h2>' . $example[$key] . '</h2>';
+                        }
+                    }
+                    ?>
+                </div>
             </div>
         </div>
     </div>
