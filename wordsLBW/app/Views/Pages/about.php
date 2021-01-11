@@ -8,7 +8,7 @@
             <h1 id="textD" class="display-4">About</h1>
             <p class="lead">Words LBW</p>
             <hr class="my-4">
-            <p>Dictionary for Synonyms and Antonyms</p>
+            <p>About This Project</p>
             <p class="lead"></p>
         </div>
     </div>
@@ -43,7 +43,7 @@
                     <div class="col-3">
                         <h4 class="card-header text-center">Cristine</h4>
                         <div class="card">
-                            <img src="../img/logo.jpg" class="card-img-top" alt="...">
+                            <img src="../img/foto cristine.jpeg" class="card-img-top" alt="cristine">
                             <div class="card-body">
                                 <p class="card-text" style="color: black;">Fullstack Developer</p>
                             </div>

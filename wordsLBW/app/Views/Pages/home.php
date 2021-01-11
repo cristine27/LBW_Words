@@ -6,7 +6,7 @@
     <div class="row  d-flex justify-content-center text-center">
         <div id="defBackground" class="jumbotron w-100">
             <h1 class="display-4"><?php echo $title; ?></h1>
-            <p class="lead">Oxford English Dictionary, Thesaurus, and English Translator</p>
+            <p class="lead">Words English Dictionary and Thesaurus</p>
             <hr class="my-4">
             <p class="mb-4">Dictionary for Definition of a Word</p>
             <form method="GET" action="/Pages/createWordDef" class="d-flex justify-content-center">

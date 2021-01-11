@@ -27,11 +27,10 @@
             <div class="col">
                 <div class="row justify-content-center py-2">
                     <div class="col-8 my-2">
-                        <h1 class="text-center">Oxford Dictionary</h1>
+                        <h1 class="text-center">Words Dictionary</h1>
                         <p class="text-center ">
-                            The Oxford English Dictionary (OED) is the principal historical dictionary of the English language, published by Oxford University Press (OUP). It traces the historical development of the English language,
-                            providing a comprehensive resource to scholars and academic researchers, as well as describing usage in its many variations throughout the world. The second edition, comprising 21,728 pages in 20 volumes,
-                            was published in 1989.
+                            Words API provides access to information about over 300,000 English words, including definitions, synonyms, rhymes, related words, and pronunciation.
+                            It also can tell you about relationships between words, for instance that "math" has categories like "algebra" and "geometry", or that a "finger" is part of a "hand".
                         </p>
                         <hr class="hrCont">
                     </div>
@@ -54,22 +53,19 @@
                                 <div class="carousel-item active" data-bs-interval="10000">
                                     <img src="../img/home2.jpg" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
-                                        <h5>First slide label</h5>
-                                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                        <h5>Provide complete definitions</h5>
                                     </div>
                                 </div>
                                 <div class="carousel-item" data-bs-interval="2000">
                                     <img src="../img/home3.jpg" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
-                                        <h5>Second slide label</h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        <h5>Can be accessed everywhere anywhere</h5>
                                     </div>
                                 </div>
                                 <div class="carousel-item">
                                     <img src="../img/home4.jpg" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
-                                        <h5>Third slide label</h5>
-                                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                        <h5>Don't have to take a bulky dictionary</h5>
                                     </div>
                                 </div>
                             </div>
@@ -87,17 +83,17 @@
                 <div class="row justify-content-center py-3 features">
                     <div class="col-sm-5">
                         <div class="card my-2">
-                            <div class="card-body text-center" >
+                            <div class="card-body text-center">
                                 <h3 class="card-Header text-center"><strong>Definition</strong> </h3>
                                 <p class="card-text text-center">
                                     Definition page provided you this features in the list below.
                                 </p>
                                 <hr class="hrCont">
-                                    <p >Pronunciation</p>
-                                    <p >Definition</p>
-                                    <p >Part Of Speech</p>
-                                    <p >Example</p>
-                                    <p >Etc.</p>
+                                <p>Pronunciation</p>
+                                <p>Definition</p>
+                                <p>Part Of Speech</p>
+                                <p>Example</p>
+                                <p>Etc.</p>
                                 <a href="/" class="btn btn-primary mt-2">Go To Definition</a>
                             </div>
                         </div>
@@ -110,11 +106,11 @@
                                     Thesaurus page provided you this features in the list below.
                                 </p>
                                 <hr class="hrCont">
-                                    <p >Pronunciation</p>
-                                    <p>Synonyms</p>
-                                    <p >Antonyms</p>
-                                    <p >Example</p>
-                                    <p >Etc.</p>
+                                <p>Pronunciation</p>
+                                <p>Synonyms</p>
+                                <p>Antonyms</p>
+                                <p>Example</p>
+                                <p>Etc.</p>
                                 <a href="/pages/thesaurus" class=" btn btn-primary mt-2">Go To Thesaurus</a>
                             </div>
                         </div>
@@ -165,9 +161,9 @@
         if (content == 'None') {
             pre.style.display = '';
             re.style.display = 'none';
-        } else if(content == 'About'){
+        } else if (content == 'About') {
             pre.style.display = 'none';
-        }else {
+        } else {
             re.style.display = '';
             pre.style.display = 'none';
         }

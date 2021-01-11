@@ -259,7 +259,6 @@ class Thesaurus extends BaseController
             $temp = $this->getExample($value);
 
             $this->sinonimExample[$key] = json_decode($temp, true);
-            //dd($this->sinonimExample);
         }
     }
     //--------------------------------------------------------------------
