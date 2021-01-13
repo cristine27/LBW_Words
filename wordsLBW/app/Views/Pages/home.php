@@ -125,7 +125,15 @@
                     ?>
                 </div>
             </div>
-
+            <div class="row my-3">
+                <div class="col">
+                    <h4>Search by :</h4>
+                    <div class="col-sm-12">
+                        <a class="btn btn-outline-primary" target=”_blank” href="https://www.google.com/search?q= <?php echo $word ?>" role="button">Google</a>
+                        <a class="btn btn-outline-primary" target=”_blank” href="https://en.wikipedia.org/wiki/ <?php echo $word ?>" role="button">Wikipedia</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

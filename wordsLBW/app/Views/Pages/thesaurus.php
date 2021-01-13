@@ -59,6 +59,12 @@
                             echo '<th scope="col">' . $count . '</th>';
                             echo '<td><a href="/Pages/createWordDef?input=' . $value . '">' . $value . '</a></td>';
                             echo '</tr>';
+                            echo '<tr>';
+                            echo '<td><p>Search by : </p></td>';
+                            echo '<td>';
+                            echo '<a class="btn btn-outline-primary mx-1" target=”_blank” href="https://www.google.com/search?q=' . $value . '" role="button">Google</a>';
+                            echo '<a class="btn btn-outline-primary mx-auto" target=”_blank” href="https://en.wikipedia.org/wiki/' . $value . '" role="button">Wikipedia</a>';
+                            echo '</tr>';
                         }
                         echo '</table>';
                         ?>
@@ -75,6 +81,12 @@
                             echo '<tr>';
                             echo '<th scope="col">' . $count . '</th>';
                             echo '<td><a href="#">' . $value . '</a></td>';
+                            echo '</tr>';
+                            echo '<tr>';
+                            echo '<td><p>Search by : </p></td>';
+                            echo '<td>';
+                            echo '<a class="btn btn-outline-primary mx-1" target=”_blank” href="https://www.google.com/search?q=' . $value . '" role="button">Google</a>';
+                            echo '<a class="btn btn-outline-primary mx-auto" target=”_blank” href="https://en.wikipedia.org/wiki/' . $value . '" role="button">Wikipedia</a>';
                             echo '</tr>';
                         }
                         echo '</table>';
@@ -103,29 +115,73 @@
 
             <div class="row my-3">
                 <div class="col">
-                    <?php
-                    echo '<h2>Example</h2>';
-                    echo '<hr id= "hrCont">';
-                    foreach ($sinonim as $key => $value) {
+                    <h2>Example</h2>
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header" id="sinomEx">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#sinomCollaps" aria-expanded="false" aria-controls="sinomCollaps">
+                                        Synonyms Words Example </button>
+                                </h5>
+                            </div>
+                            <hr id="hrCont">
+                            <div id="sinomCollaps" class="collapse" aria-labelledby="sinomEx" data-parent="#accordion">
+                                <div class="card-body">
+                                    <?php
+                                    foreach ($sinonim as $key => $value) {
 
-                        if (is_array($example[$key])) {
-                            echo '<h4 style="color : darkblue ; font-style : italic "><strong>' . $example[$key]['word'] . '</strong></h2>';
+                                        if (is_array($exampleS[$key])) {
+                                            echo '<h4 style="color : darkblue ; font-style : italic "><strong>' . $exampleS[$key]['word'] . '</strong></h4>';
 
-                            echo '<ul class="list-group list-group-flush">';
+                                            echo '<ul class="list-group list-group-flush">';
 
-                            foreach ($example[$key]['examples'] as $key => $value) {
-                                echo '<li class="list-group-item">' . $value . '</li>';
-                            }
-                            echo '</ul>';
-                        } else {
-                            echo '<h2>' . $example[$key] . '</h2>';
-                        }
-                    }
-                    ?>
+                                            foreach ($exampleS[$key]['examples'] as $key => $value) {
+                                                echo '<li class="list-group-item">' . $value . '</li>';
+                                            }
+                                            echo '</ul>';
+                                        } else {
+                                            echo '<h4>' . $exampleS[$key] . '</h4>';
+                                        }
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" id="antoEx">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#antoCollaps" aria-expanded="false" aria-controls="antoCollaps">
+                                        Antonyms Words Example </button>
+                                </h5>
+                            </div>
+                            <hr id="hrCont">
+                            <div id="antoCollaps" class="collapse" aria-labelledby="antoEx" data-parent="#accordion">
+                                <div class="card-body">
+                                    <?php
+                                    foreach ($antonim as $key => $value) {
+
+                                        if (is_array($exampleS[$key])) {
+                                            echo '<h4 style="color : darkblue ; font-style : italic "><strong>' . $exampleS[$key]['word'] . '</strong></h4>';
+
+                                            echo '<ul class="list-group list-group-flush">';
+
+                                            foreach ($exampleS[$key]['examples'] as $key => $value) {
+                                                echo '<li class="list-group-item">' . $value . '</li>';
+                                            }
+                                            echo '</ul>';
+                                        } else {
+                                            echo '<h4>' . $exampleS[$key] . '</h4>';
+                                        }
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<?= $this->endsection(); ?>
+    <?= $this->endsection(); ?>
