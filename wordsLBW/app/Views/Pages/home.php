@@ -24,10 +24,10 @@
     <div class="row">
         <div class="col-8">
             <div id="contentResult">
-                <h2 id="textD" class="card-header text-center" style="color : darkblue ; font-style : italic "><strong><?php echo $word ?></strong></h2>
+                <h2 id="textD" class="card-header text-center" style="color: blue; font-style: italic"><strong><?php echo ucfirst($word) ?></strong></h2>
                 <div class="card-body">
                     <?php
-                    echo '<h4 class="card-header mb-3 bg-warning">Pronunctiation</h4>';
+                    echo '<h4 class="card-header mb-3 bg-warning">Pronunciation</h4>';
                     echo '<table class="table table-bordered  p-2">';
                     if (is_array($pronunciation)) {
                         foreach ($pronunciation['pronunciation'] as $key => $value) {
@@ -47,7 +47,10 @@
                                 foreach ($value as $key2 => $value2) {
                                     if ($key2 == "definition" || $key2 == "partOfSpeech" || $key2 == "typeOf" || $key2 == "hasTypes" || $key2 == "derivation") {
                                         echo '<hr id= "hrCont">';
-                                        echo '<h4 class="card-title" style="color : darkblue ; font-style : italic "><strong>' . $key2 . '</strong></h4>';
+                                        if ($key2 == "partOfSpeech") echo '<h4 class="card-title" style="color: blue; font-style: italic"><strong>Part of Speech</strong></h4>';
+                                        elseif ($key2 == "typeOf") echo '<h4 class="card-title" style="color: blue; font-style: italic"><strong>Type of</strong></h4>';
+                                        elseif ($key2 == "hasTypes") echo '<h4 class="card-title" style="color: blue; font-style: italic"><strong>Has Types</strong></h4>';
+                                        else echo '<h4 class="card-title" style="color: blue; font-style: italic"><strong>' . ucfirst($key2) . '</strong></h4>';
                                         if (!is_array($value2)) {
 
                                             echo '<li class= "px-2 py-4"><strong>' . $value2 . '</strong></li>';
@@ -113,7 +116,7 @@
                     echo '<h2>Example</h2>';
                     echo '<hr id= "hrCont">';
                     if (is_array($example)) {
-                        echo '<h2 style="color : darkblue ; font-style : italic "><strong>' . $example['word'] . '</strong></h2>';
+                        echo '<h2 style="color: blue; font-style: italic"><strong>' . $example['word'] . '</strong></h2>';
                         echo '<ul class="list-group list-group-flush">';
                         foreach ($example['examples'] as $key => $value) {
                             echo '<li class="list-group-item">' . $value . '</li>';
