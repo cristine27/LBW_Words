@@ -53,19 +53,19 @@
                                 <div class="carousel-item active" data-bs-interval="10000">
                                     <img src="../img/home2.jpg" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
-                                        <h5>Provide complete definitions</h5>
+                                        <h5 style="color: black;">Provide complete definitions</h5>
                                     </div>
                                 </div>
                                 <div class="carousel-item" data-bs-interval="2000">
                                     <img src="../img/home3.jpg" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
-                                        <h5>Can be accessed everywhere anywhere</h5>
+                                        <h5 style="color: black;">Can be accessed everywhere anywhere</h5>
                                     </div>
                                 </div>
                                 <div class="carousel-item">
                                     <img src="../img/home4.jpg" class="d-block w-100" alt="...">
                                     <div class="carousel-caption d-none d-md-block">
-                                        <h5>Don't have to take a bulky dictionary</h5>
+                                        <h5 style="color: white;">Don't have to take a bulky dictionary</h5>
                                     </div>
                                 </div>
                             </div>

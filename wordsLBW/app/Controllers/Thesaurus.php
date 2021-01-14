@@ -9,10 +9,12 @@ class Thesaurus extends BaseController
     protected $antonim;
     protected $sinonimExample;
     protected $antonimExample;
+    protected $placeholder;
 
     public function __construct()
     {
         $this->randomWord = $this->getRandom();
+        $this->placeholder = 'Type your word';
     }
 
     public function index()
@@ -38,7 +40,8 @@ class Thesaurus extends BaseController
                 ],
                 'exampleA' => [
                     '0' => 'none'
-                ]
+                ],
+                'placeholder' => $this->placeholder
             ];
         } else {
             $data = [
@@ -64,7 +67,8 @@ class Thesaurus extends BaseController
                 ],
                 'exampleA' => [
                     '0' => 'none'
-                ]
+                ],
+                'placeholder' => $this->placeholder
             ];
         }
 
@@ -211,7 +215,8 @@ class Thesaurus extends BaseController
                 'resultRan' => $randomWord['results'],
                 'pronunciation' => $pronunciation['pronunciation'],
                 'exampleS' => $this->sinonimExample,
-                'exampleA' => $this->antonimExample
+                'exampleA' => $this->antonimExample,
+                'placeholder' => $this->placeholder
             ];
         } else {
             $data = [
@@ -227,7 +232,8 @@ class Thesaurus extends BaseController
                 ],
                 'pronunciation' => $pronunciation['pronunciation'],
                 'exampleS' => $this->sinonimExample,
-                'exampleA' => $this->antonimExample
+                'exampleA' => $this->antonimExample,
+                'placeholder' => $this->placeholder
             ];
         }
         return view('Pages/thesaurus', $data);

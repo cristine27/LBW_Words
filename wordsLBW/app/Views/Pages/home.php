@@ -11,7 +11,7 @@
             <p class="mb-4">Dictionary for Definition of a Word</p>
             <form method="GET" action="/Pages/createWordDef" class="d-flex justify-content-center">
                 <?= csrf_field(); ?>
-                <input class="form-control rounded-pill w-50" type="text" id="inputWords" name="input" placeholder="Type your word" aria-label="Search">
+                <input class="form-control rounded-pill w-50" type="text" id="inputWords" name="input" placeholder="<?php echo $placeholder ?>" aria-label="Search">
                 <button class="btn btn-success rounded-circle ml-4" type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
@@ -47,8 +47,6 @@
                     else {
                        echo '<h5>none</h5>';
                     }
-                    
-
                     echo '<hr>';
                     echo '</table>';
                     if (is_array($result) && isset($result['results'])) {
