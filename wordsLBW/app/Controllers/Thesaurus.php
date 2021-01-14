@@ -194,16 +194,17 @@ class Thesaurus extends BaseController
         $this->PrepareSinonimExample();
         $this->PrepareAntonimExample();
 
-        if (count($this->antonim['antonyms']) == 0) {
-            array_fill_keys($this->antonim['antonyms'], 'sorry, antonyms for this word is not available');
+        if (is_array($this->antonim) && !array_key_exists('antonyms',$this->antonim)){
+            $this->antonim['antonyms'] = 'sorry, antonyms for this word is not available';
         }
-        if (count($this->sinonim['synonyms']) == 0) {
-            array_fill_keys($this->sinonim['synonyms'], 'sorry, synonyms for this word is not available');
+        if (is_array($this->sinonim) && !array_key_exists('synonyms',$this->sinonim)) {
+            $this->sinonim['synonyms'] = 'sorry, synonyms for this word is not available';
         }
+        
         if (array_key_exists('results', $randomWord)) {
             $data = [
                 'title' => 'Thesaurus',
-                'word' => $this->sinonim['word'],
+                'word' => $input,
                 'sinonim' => $this->sinonim['synonyms'],
                 'antonim' => $this->antonim['antonyms'],
                 'wordRan' => $randomWord['word'],
@@ -215,7 +216,7 @@ class Thesaurus extends BaseController
         } else {
             $data = [
                 'title' => 'Thesaurus',
-                'word' => $this->sinonim['word'],
+                'word' => $input,
                 'sinonim' => $this->sinonim['synonyms'],
                 'antonim' => $this->antonim['antonyms'],
                 'wordRan' => $randomWord['word'],
@@ -261,20 +262,24 @@ class Thesaurus extends BaseController
 
     public function PrepareSinonimExample()
     {
-        foreach ($this->sinonim['synonyms'] as $key  => $value) {
-            $new_id = count((array)$this->sinonimExample);
-            if ($new_id != 0) {
-                $new_id++;
+        if (is_array($this->sinonim)) {
+            foreach ($this->sinonim['synonyms'] as $key  => $value) {
+                $new_id = count((array)$this->sinonimExample);
+                if ($new_id != 0) {
+                    $new_id++;
+                }
+    
+                $temp = $this->getExample($value);
+    
+                $this->sinonimExample[$key] = json_decode($temp, true);
             }
-
-            $temp = $this->getExample($value);
-
-            $this->sinonimExample[$key] = json_decode($temp, true);
         }
+        
     }
 
     public function PrepareAntonimExample()
     {
+        if (is_array($this->sinonim)) {
         foreach ($this->antonim['antonyms'] as $key  => $value) {
             $new_id = count((array)$this->antonimExample);
             if ($new_id != 0) {
@@ -286,6 +291,6 @@ class Thesaurus extends BaseController
             $this->antonimExample[$key] = json_decode($temp, true);
         }
     }
-    //--------------------------------------------------------------------
+    }
 
 }

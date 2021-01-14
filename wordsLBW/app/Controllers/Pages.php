@@ -23,7 +23,13 @@ class Pages extends BaseController
 
 	public function thesaurus()
 	{
-		return $this->thesaurus->index();
+		$temp = $this->request->getVar('input');
+		if (isset($temp) && $temp != "") {
+			$input = $this->request->getVar('input');
+		} else {
+			$input = $_SESSION['input'];
+		}
+		return $this->thesaurus->createRes($input);
 	}
 
 	public function about()
@@ -34,6 +40,7 @@ class Pages extends BaseController
 	public function createWordDef()
 	{
 		$input = $this->request->getVar('input');
+		$_SESSION['input'] = $input;
 		return $this->definition->createWordDef($input);
 	}
 

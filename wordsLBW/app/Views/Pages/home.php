@@ -29,14 +29,25 @@
                     <?php
                     echo '<h4 class="card-header mb-3 bg-warning">Pronunciation</h4>';
                     echo '<table class="table table-bordered  p-2">';
-                    if (is_array($pronunciation)) {
-                        foreach ($pronunciation['pronunciation'] as $key => $value) {
+                    if (is_array($pronunciation) && count($pronunciation) !=0) {
+                        foreach ($pronunciation as $key => $value) {
                             echo '<tr>';
                             echo '<th scope="col" >' . $key . '</th>';
-                            echo '<td >' . $value . '</td>';
+                            if (is_array($value)) {
+                                foreach ($value as $key2 => $value2) {
+                                    echo '<td >' . $value2 . '</td>';
+                                }
+                            }
+                            else {
+                                echo '<td >' . $value . '</td>';
+                            }
                             echo '</tr>';
                         }
                     }
+                    else {
+                       echo '<h5>none</h5>';
+                    }
+                    
 
                     echo '<hr>';
                     echo '</table>';

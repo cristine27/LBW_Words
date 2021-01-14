@@ -175,6 +175,32 @@
                 wrap: false
             })
         }
+
+        $('.collapse').collapse()
+
+        var elements = document.getElementsByClassName('sinButton')
+        var elements2 = document.getElementsByClassName('anButton')
+        for (var i = 0; i < elements.length; i++){
+            elements[i].onclick = ShowLess;
+        }
+
+        for (var i = 0; i < elements2.length; i++){
+            elements2[i].onclick = ShowLess;
+        }
+
+
+        function ShowLess(e) {
+            target = this.getAttribute('aria-expanded');
+            if (target == 'true') {
+                this.textContent = "show";                
+            }
+            else{
+                this.textContent = "less";
+            }
+            console.log(target + this.textContent);
+            
+        }
+        
     </script>
 
 </body>

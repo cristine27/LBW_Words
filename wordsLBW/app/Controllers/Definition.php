@@ -170,12 +170,10 @@ class Definition extends BaseController
         $randomWord = $this->randomWord;
         $examples = $this->getExample($input);
         
-        
-
-        if (array_key_exists('results', $randomWord)) {
+        if (isset($randomWord) && array_key_exists('results', $randomWord)) {
             $data = [
                 'title'  => 'Definition',
-                'word' => $word['word'],
+                'word' => $input,
                 'wordRan'   => $randomWord['word'],
                 'result' => $word,
                 'resultRan' => $randomWord['results'],
@@ -186,7 +184,7 @@ class Definition extends BaseController
         } else {
             $data = [
                 'title'  => 'Definition',
-                'word' => $word['word'],
+                'word' => $input,
                 'wordRan'   => $randomWord['word'],
                 'result' => $word,
                 'resultRan' => [
