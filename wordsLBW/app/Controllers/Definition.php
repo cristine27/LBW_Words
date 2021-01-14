@@ -6,9 +6,12 @@ namespace App\Controllers;
 class Definition extends BaseController
 {
     protected $randomWord;
+    protected $placeholder;
+
     public function __construct()
     {
         $this->randomWord = $this->getRandom();
+        $this->placeholder = 'Type your Word';
     }
 
     public function index()
@@ -25,7 +28,8 @@ class Definition extends BaseController
                 ],
                 'resultRan' => $randomWord['results'],
                 'pronunciation' => 'none',
-                'example' => 'none'
+                'example' => 'none',
+                'placeholder' => $this->placeholder
             ];
         } else {
             $data = [
@@ -41,7 +45,8 @@ class Definition extends BaseController
                     ]
                 ],
                 'pronunciation' => 'none',
-                'example' => 'none'
+                'example' => 'none',
+                'placeholder' => $this->placeholder
             ];
         }
 
@@ -169,8 +174,8 @@ class Definition extends BaseController
         $pronunciation = $this->getPronunciation($input);
         $randomWord = $this->randomWord;
         $examples = $this->getExample($input);
-        
-        
+        $this->placeholder = $word['word'];
+
 
         if (array_key_exists('results', $randomWord)) {
             $data = [
@@ -180,7 +185,8 @@ class Definition extends BaseController
                 'result' => $word,
                 'resultRan' => $randomWord['results'],
                 'pronunciation' => $pronunciation,
-                'example' => $examples
+                'example' => $examples,
+                'placeholder' => $this->placeholder
 
             ];
         } else {
@@ -195,8 +201,8 @@ class Definition extends BaseController
                     ]
                 ],
                 'pronunciation' => $pronunciation,
-                'example' => $examples
-
+                'example' => $examples,
+                'placeholder' => $this->placeholder
             ];
         }
 

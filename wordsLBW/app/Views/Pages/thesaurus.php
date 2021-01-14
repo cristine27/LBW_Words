@@ -12,7 +12,7 @@
             <p class="lead">
             <form method="GET" action="/Pages/createRes" class="d-flex justify-content-center">
                 <?= csrf_field(); ?>
-                <input type="text" id="inputWords" name="input" class="form-control rounded-pill w-50" aria-label="Text input with dropdown button" placeholder="Type your word">
+                <input type="text" id="inputWords" name="input" class="form-control rounded-pill w-50" aria-label="Text input with dropdown button" placeholder="<?php echo $placeholder ?>">
                 <button class="btn btn-success ml-3 rounded-circle" type="submit"><i class=" fa fa-search"></i></button>
             </form>
             </p>
