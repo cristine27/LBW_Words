@@ -30,10 +30,15 @@
                     echo '<h4 class="card-header mb-3 bg-warning">Pronunciation</h4>';
                     echo '<table class="table table-bordered  p-2">';
                     if (is_array($pronunciation)) {
-                        foreach ($pronunciation['pronunciation'] as $key => $value) {
+                        if (is_array(($pronunciation['pronunciation']))) {
+                            foreach ($pronunciation['pronunciation'] as $key => $value) {
+                                echo '<tr>';
+                                echo '<td >' . $value . '</td>';
+                                echo '</tr>';
+                            }
+                        } else {
                             echo '<tr>';
-                            echo '<th scope="col" >' . $key . '</th>';
-                            echo '<td >' . $value . '</td>';
+                            echo '<td >' . $pronunciation['pronunciation'] . '</td>';
                             echo '</tr>';
                         }
                     }

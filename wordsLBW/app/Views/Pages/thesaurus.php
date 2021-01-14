@@ -39,7 +39,6 @@
                     echo '<table class="table table-bordered">';
                     foreach ($pronunciation as $key => $value) {
                         echo '<tr>';
-                        echo '<th scope="col">' . $key . '</th>';
                         echo '<td>' . $value . '</td>';
                         echo '</tr>';
                     }
