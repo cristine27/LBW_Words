@@ -58,12 +58,10 @@
                             echo '<tr>';
                             echo '<th scope="col">' . $count . '</th>';
                             echo '<td><a href="/Pages/createWordDef?input=' . $value . '">' . $value . '</a></td>';
-                            echo '</tr>';
-                            echo '<tr>';
-                            echo '<td><p>Search by : </p></td>';
-                            echo '<td>';
+                            echo '<td><p>Search by : </p>';
                             echo '<a class="btn btn-outline-primary mx-1" target=”_blank” href="https://www.google.com/search?q=' . $value . '" role="button">Google</a>';
                             echo '<a class="btn btn-outline-primary mx-auto" target=”_blank” href="https://en.wikipedia.org/wiki/' . $value . '" role="button">Wikipedia</a>';
+                            echo '</td>';
                             echo '</tr>';
                         }
                         echo '</table>';
