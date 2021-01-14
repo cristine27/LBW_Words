@@ -26,7 +26,7 @@
     <div class="row">
         <div class="col-8">
             <div id="contentResult">
-                <h2 id="textD" class="card-header text-center " style="color : darkblue ; font-style : italic "><strong><?php echo $word ?></strong></h2>
+                <h2 id="textD" class="card-header text-center " style="color: blue; font-style: italic"><strong><?php echo ucfirst($word) ?></strong></h2>
                 <div class="card-body">
                     <!-- <h5 class="card-title">Pronounciation</h5>
                     <p>bʊk</p>
@@ -35,7 +35,7 @@
                     <h5 class="card-title">Examples</h5> -->
 
                     <?php
-                    echo '<h4 class="card-header mb-3 bg-warning"> Pronunciation</h4>';
+                    echo '<h4 class="card-header mb-3 bg-warning">Pronunciation</h4>';
                     echo '<table class="table table-bordered">';
                     foreach ($pronunciation as $key => $value) {
                         echo '<tr>';
@@ -51,7 +51,7 @@
                 <div class="card-header">
                     <div class="card-body">
                         <?php
-                        echo '<h4 class="card-header mb-3 bg-warning"> Synonyms</h4>';
+                        echo '<h4 class="card-header mb-3 bg-warning">Synonyms</h4>';
                         echo '<table class="table table-bordered">';
                         foreach ($sinonim as $key => $value) {
                             $count = $key + 1;
@@ -131,7 +131,7 @@
                                     foreach ($sinonim as $key => $value) {
 
                                         if (is_array($exampleS[$key])) {
-                                            echo '<h4 style="color : darkblue ; font-style : italic "><strong>' . $exampleS[$key]['word'] . '</strong></h4>';
+                                            echo '<h4 style="color: blue; font-style: italic"><strong>' . $exampleS[$key]['word'] . '</strong></h4>';
 
                                             echo '<ul class="list-group list-group-flush">';
 
@@ -162,7 +162,7 @@
                                     foreach ($antonim as $key => $value) {
 
                                         if (is_array($exampleS[$key])) {
-                                            echo '<h4 style="color : darkblue ; font-style : italic "><strong>' . $exampleS[$key]['word'] . '</strong></h4>';
+                                            echo '<h4 style="color: blue; font-style: italic"><strong>' . $exampleS[$key]['word'] . '</strong></h4>';
 
                                             echo '<ul class="list-group list-group-flush">';
 
