@@ -59,20 +59,20 @@
                         </div>
                     </div>
                     <div class="col-3">
-                        <h4 class="card-header text-center">Nama</h4>
+                        <h4 class="card-header text-center">Firman</h4>
                         <div class="card">
                             <img src="../img/logo.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text" style="color: black;">Front-End Developer</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-3">
-                        <h4 class="card-header text-center">Nama</h4>
+                        <h4 class="card-header text-center">Yosef</h4>
                         <div class="card">
                             <img src="../img/logo.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text" style="color: black;">Front-End Developer</p>
                             </div>
                         </div>
                     </div>
