@@ -25,7 +25,7 @@ class Pages extends BaseController
 	{
 
 		$temp = $this->request->getVar('input');
-		if (isset($_SESSION['input']) && $_SESSION['input'] !=0) {
+		if (isset($_SESSION['input']) && $_SESSION['input'] != null) {
 			if (isset($temp) && $temp != "") {
 				$input = $this->request->getVar('input');
 			} else {
