@@ -229,14 +229,14 @@ class Thesaurus extends BaseController
             }
         } else {
             $data = [
-                'title'  => 'Thesaurus',
-                'word' => $this->sinonim['message'],
+                'title'  => $this->sinonim['message'],
+                'word' => $input,
                 'wordRan'   => $randomWord['word'],
                 'sinonim' => [
-                    '0' => 'Not Found'
+                    '0' => $input.' Synonyms'
                 ],
                 'antonim' => [
-                    '0' => 'Not Found'
+                    '0' => $input.' Antonyms'
                 ],
                 'resultRan' => [
                     '0' => [
@@ -244,8 +244,8 @@ class Thesaurus extends BaseController
                     ]
                 ],
                 'pronunciation' => 'Not Found',
-                'exampleS' => 'Not Found',
-                'exampleA' => 'Not Found',
+                'exampleS' => $input.' example',
+                'exampleA' => $input.' example',
                 'placeholder' => $this->placeholder
             ];
         }

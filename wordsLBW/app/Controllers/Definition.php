@@ -208,8 +208,8 @@ class Definition extends BaseController
         }
         else {
             $data = [
-                'title'  => 'Definition',
-                'word' => $word['message'],
+                'title'  => $word['message'],
+                'word' => $input,
                 'wordRan'   => $randomWord['word'],
                 'result' => [
                     'Definition' => 'Not yet'
