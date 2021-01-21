@@ -174,36 +174,60 @@ class Definition extends BaseController
         $pronunciation = $this->getPronunciation($input);
         $randomWord = $this->randomWord;
         $examples = $this->getExample($input);
-        
-        if (isset($randomWord) && array_key_exists('results', $randomWord)) {
-            $data = [
-                'title'  => 'Definition',
-                'word' => $input,
-                'wordRan'   => $randomWord['word'],
-                'result' => $word,
-                'resultRan' => $randomWord['results'],
-                'pronunciation' => $pronunciation,
-                'example' => $examples,
-                'placeholder' => $this->placeholder
 
-            ];
-        } else {
+        if(array_key_exists('word',$word)){
+            if (isset($randomWord) && array_key_exists('results', $randomWord)) {
+            
+                $data = [
+                    'title'  => 'Definition',
+                    'word' => $input,
+                    'wordRan'   => $randomWord['word'],
+                    'result' => $word,
+                    'resultRan' => $randomWord['results'],
+                    'pronunciation' => $pronunciation,
+                    'example' => $examples,
+                    'placeholder' => $this->placeholder
+    
+                ];
+            } else {
+                $data = [
+                    'title'  => 'Definition',
+                    'word' => $input,
+                    'wordRan'   => $randomWord['word'],
+                    'result' => $word,
+                    'resultRan' => [
+                        '0' => [
+                            'definition' => 'Sorry... Defintion for the Word not Available yet'
+                        ]
+                    ],
+                    'pronunciation' => $pronunciation,
+                    'example' => $examples,
+                    'placeholder' => $this->placeholder
+                ];
+            }
+        }
+        else {
             $data = [
                 'title'  => 'Definition',
-                'word' => $input,
+                'word' => $word['message'],
                 'wordRan'   => $randomWord['word'],
-                'result' => $word,
+                'result' => [
+                    'Definition' => 'Not yet'
+                ],
                 'resultRan' => [
                     '0' => [
                         'definition' => 'Sorry... Defintion for the Word not Available yet'
                     ]
                 ],
-                'pronunciation' => $pronunciation,
-                'example' => $examples,
+                'pronunciation' => 'none',
+                'example' => 'none',
                 'placeholder' => $this->placeholder
             ];
         }
+        
+        
 
         return view('Pages/home', $data);
     }
+
 }

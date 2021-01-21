@@ -31,6 +31,10 @@
 [data-theme="dark"] .card-text {
   color: rgb(255, 255, 255, 1) !important;
 }
+
+[data-theme="dark"] .darktext {
+  color: lightblue !important;
+}
 /*
     DARK THEME
 */

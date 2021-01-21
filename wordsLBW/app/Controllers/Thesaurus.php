@@ -32,9 +32,9 @@ class Thesaurus extends BaseController
                     '0' => 'Not yet'
                 ],
                 'resultRan' => $randomWord['results'],
-                'pronunciation' =>'none',
-                'exampleS' =>'none',
-                'exampleA' =>'none',
+                'pronunciation' => 'none',
+                'exampleS' => 'none',
+                'exampleA' => 'none',
                 'placeholder' => $this->placeholder
             ];
         } else {
@@ -53,9 +53,9 @@ class Thesaurus extends BaseController
                         'definition' => 'Sorry... Defintion for the Word not Available yet'
                     ]
                 ],
-                'pronunciation' =>'none',
+                'pronunciation' => 'none',
                 'exampleS' => 'none',
-                'exampleA' =>'none',
+                'exampleA' => 'none',
                 'placeholder' => $this->placeholder
             ];
         }
@@ -180,50 +180,77 @@ class Thesaurus extends BaseController
     public function createRes($input)
     {
         $pronunciation = $this->getPronunciation($input);
-        $this->sinonim = $this->getSinonim($input);
-        $this->antonim = $this->getAntonim($input);
         $randomWord = $this->randomWord;
-        $this->PrepareSinonimExample();
-        $this->PrepareAntonimExample();
+        $this->sinonim = $this->getSinonim($input);
 
-        if (is_array($this->antonim) && !array_key_exists('antonyms',$this->antonim)){
-            $this->antonim['antonyms'] = 'sorry, antonyms for this word is not available';
-        }
-        if (is_array($this->sinonim) && !array_key_exists('synonyms',$this->sinonim)) {
-            $this->sinonim['synonyms'] = 'sorry, synonyms for this word is not available';
-        }
-        
-        if (array_key_exists('results', $randomWord)) {
-            $data = [
-                'title' => 'Thesaurus',
-                'word' => $input,
-                'sinonim' => $this->sinonim['synonyms'],
-                'antonim' => $this->antonim['antonyms'],
-                'wordRan' => $randomWord['word'],
-                'resultRan' => $randomWord['results'],
-                'pronunciation' => $pronunciation['pronunciation'],
-                'exampleS' => $this->sinonimExample,
-                'exampleA' => $this->antonimExample,
-                'placeholder' => $this->placeholder
-            ];
+        if (!array_key_exists('message', $this->sinonim)) {
+            $this->antonim = $this->getAntonim($input);
+            $this->PrepareSinonimExample();
+            $this->PrepareAntonimExample();
+
+            if (is_array($this->antonim) && !array_key_exists('antonyms', $this->antonim)) {
+                $this->antonim['antonyms'] = 'sorry, antonyms for this word is not available';
+            }
+            if (is_array($this->sinonim) && !array_key_exists('synonyms', $this->sinonim)) {
+                $this->sinonim['synonyms'] = 'sorry, synonyms for this word is not available';
+            }
+
+
+            if (array_key_exists('results', $randomWord)) {
+                $data = [
+                    'title' => 'Thesaurus',
+                    'word' => $input,
+                    'sinonim' => $this->sinonim['synonyms'],
+                    'antonim' => $this->antonim['antonyms'],
+                    'wordRan' => $randomWord['word'],
+                    'resultRan' => $randomWord['results'],
+                    'pronunciation' => $pronunciation['pronunciation'],
+                    'exampleS' => $this->sinonimExample,
+                    'exampleA' => $this->antonimExample,
+                    'placeholder' => $this->placeholder
+                ];
+            } else {
+                $data = [
+                    'title' => 'Thesaurus',
+                    'word' => $input,
+                    'sinonim' => $this->sinonim['synonyms'],
+                    'antonim' => $this->antonim['antonyms'],
+                    'wordRan' => $randomWord['word'],
+                    'resultRan' => [
+                        '0' => [
+                            'definition' => 'Sorry... Defintion for the Word not Available yet'
+                        ]
+                    ],
+                    'pronunciation' => $pronunciation['pronunciation'],
+                    'exampleS' => $this->sinonimExample,
+                    'exampleA' => $this->antonimExample,
+                    'placeholder' => $this->placeholder
+                ];
+            }
         } else {
             $data = [
-                'title' => 'Thesaurus',
-                'word' => $input,
-                'sinonim' => $this->sinonim['synonyms'],
-                'antonim' => $this->antonim['antonyms'],
-                'wordRan' => $randomWord['word'],
+                'title'  => 'Thesaurus',
+                'word' => $this->sinonim['message'],
+                'wordRan'   => $randomWord['word'],
+                'sinonim' => [
+                    '0' => 'Not Found'
+                ],
+                'antonim' => [
+                    '0' => 'Not Found'
+                ],
                 'resultRan' => [
                     '0' => [
                         'definition' => 'Sorry... Defintion for the Word not Available yet'
                     ]
                 ],
-                'pronunciation' => $pronunciation['pronunciation'],
-                'exampleS' => $this->sinonimExample,
-                'exampleA' => $this->antonimExample,
+                'pronunciation' => 'Not Found',
+                'exampleS' => 'Not Found',
+                'exampleA' => 'Not Found',
                 'placeholder' => $this->placeholder
             ];
         }
+
+
         return view('Pages/thesaurus', $data);
     }
 
@@ -262,29 +289,27 @@ class Thesaurus extends BaseController
                 if ($new_id != 0) {
                     $new_id++;
                 }
-    
+
                 $temp = $this->getExample($value);
-    
+
                 $this->sinonimExample[$key] = json_decode($temp, true);
             }
         }
-        
     }
 
     public function PrepareAntonimExample()
     {
         if (is_array($this->sinonim)) {
-        foreach ($this->antonim['antonyms'] as $key  => $value) {
-            $new_id = count((array)$this->antonimExample);
-            if ($new_id != 0) {
-                $new_id++;
+            foreach ($this->antonim['antonyms'] as $key  => $value) {
+                $new_id = count((array)$this->antonimExample);
+                if ($new_id != 0) {
+                    $new_id++;
+                }
+
+                $temp = $this->getExample($value);
+
+                $this->antonimExample[$key] = json_decode($temp, true);
             }
-
-            $temp = $this->getExample($value);
-
-            $this->antonimExample[$key] = json_decode($temp, true);
         }
     }
-    }
-
 }

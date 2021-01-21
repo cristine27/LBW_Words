@@ -30,7 +30,7 @@ echo $title; ?></h1>
     <div class="row">
         <div class="col-8">
             <div id="contentResult">
-                <h2 id="textD" class="card-header text-center " style="color: blue; font-style: italic"><strong><?php echo ($word) ?></strong></h2>
+                <h2 id="textD" class="card-header text-center darktext" style="color: blue; font-style: italic"><strong><?php echo ($word) ?></strong></h2>
                 <div class="card-body">
 
                     <?php
@@ -66,13 +66,13 @@ echo $title; ?></h1>
                                 $count = $key + 1;
                                 echo '<tr>';
                                 echo '<th scope="col">' . $count . '</th>';
-                                echo '<td><a href="/Pages/createWordDef?input=' . $value . '">' . $value . '</a></td>';
+                                echo '<td><a class="darktext" href="/Pages/createWordDef?input=' . $value . '">' . $value . '</a></td>';
                                 echo '</tr>';
                                 echo '<tr>';
                                 echo '<td><p>Search by : </p></td>';
                                 echo '<td>';
-                                echo '<a class="btn btn-outline-primary mx-1" target=”_blank” href="https://www.google.com/search?q=' . $value . '" role="button">Google</a>';
-                                echo '<a class="btn btn-outline-primary mx-auto" target=”_blank” href="https://en.wikipedia.org/wiki/' . $value . '" role="button">Wikipedia</a>';
+                                echo '<a class="btn btn-outline-primary mx-1 darktext" target=”_blank” href="https://www.google.com/search?q=' . $value . '" role="button">Google</a>';
+                                echo '<a class="btn btn-outline-primary mx-auto darktext" target=”_blank” href="https://en.wikipedia.org/wiki/' . $value . '" role="button">Wikipedia</a>';
                                 echo '</tr>';
                             }
                             echo '</table>';
@@ -95,13 +95,13 @@ echo $title; ?></h1>
                                 $count = $key + 1;
                                 echo '<tr>';
                                 echo '<th scope="col">' . $count . '</th>';
-                                echo '<td><a href="/Pages/createWordDef?input='.$value.'">' . $value . '</a></td>';
+                                echo '<td><a class="darktext" href="/Pages/createWordDef?input='.$value.'">' . $value . '</a></td>';
                                 echo '</tr>';
                                 echo '<tr>';
                                 echo '<td><p>Search by : </p></td>';
                                 echo '<td>';
-                                echo '<a class="btn btn-outline-primary mx-1" target=”_blank” href="https://www.google.com/search?q=' . $value . '" role="button">Google</a>';
-                                echo '<a class="btn btn-outline-primary mx-auto" target=”_blank” href="https://en.wikipedia.org/wiki/' . $value . '" role="button">Wikipedia</a>';
+                                echo '<a class="btn btn-outline-primary mx-1 darktext" target=”_blank” href="https://www.google.com/search?q=' . $value . '" role="button">Google</a>';
+                                echo '<a class="btn btn-outline-primary mx-auto darktext" target=”_blank” href="https://en.wikipedia.org/wiki/' . $value . '" role="button">Wikipedia</a>';
                                 echo '</tr>';
                             }
                             echo '</table>';
@@ -139,7 +139,7 @@ echo $title; ?></h1>
                         <div class="card">
                             <div class="card-header" id="sinomEx">
                                 <h5 class="mb-0">
-                                    <button class="btn btn-link" data-toggle="collapse" data-target="#sinomCollaps" aria-expanded="false" aria-controls="sinomCollaps">
+                                    <button class="btn btn-link darktext" data-toggle="collapse" data-target="#sinomCollaps" aria-expanded="false" aria-controls="sinomCollaps">
                                         Synonyms Words Example </button>
                                 </h5>
                             </div>
@@ -154,7 +154,7 @@ echo $title; ?></h1>
                                             if (is_array($exampleS[$key])) {
                                                 echo '<div class="card mb-2">';
                                                 echo '<div class="card-header" id="heading' . $key . '">';
-                                                echo '<h4 style="color: blue; font-style: italic">' . $exampleS[$key]['word'] . '
+                                                echo '<h4 class="darktext" style="color: blue; font-style: italic">' . $exampleS[$key]['word'] . '
                                                 <button class="btn btn-link sinButton" data-toggle="collapse" data-target="#collapse' . $key . '" aria-expanded="false" aria-controls="collapse' . $key . '"> show
                                                 </button></h4>';
                                                 echo '</div>';
@@ -192,7 +192,7 @@ echo $title; ?></h1>
                         <div class="card">
                             <div class="card-header" id="antoEx">
                                 <h5 class="mb-0">
-                                    <button class="btn btn-link" data-toggle="collapse" data-target="#antoCollaps" aria-expanded="false" aria-controls="antoCollaps">
+                                    <button class="btn btn-link darktext" data-toggle="collapse" data-target="#antoCollaps" aria-expanded="false" aria-controls="antoCollaps">
                                         Antonyms Words Example </button>
                                 </h5>
                             </div>
@@ -207,7 +207,7 @@ echo $title; ?></h1>
                                             if (is_array($exampleA[$key])) {
                                                 echo '<div class="card mb-2">';
                                                 echo '<div class="card-header" id="heading' . $key . '">';
-                                                echo '<h4 style="color: blue; font-style: italic">' . $exampleA[$key]['word'] . '
+                                                echo '<h4 class="darktext" style="color: blue; font-style: italic">' . $exampleA[$key]['word'] . '
                                                 <button class="btn btn-link anButton" data-toggle="collapse" data-target="#collapse2' . $key . '" aria-expanded="false" aria-controls="collapse2' . $key . '"> show
                                                 </button></h4>'; 
                                                 echo '</div>';
@@ -230,11 +230,7 @@ echo $title; ?></h1>
                                             }
                                         }
                                         echo '</div>';
-                                    } else {
-                                        echo '<h2> Search the word using the link below!!! </h2>';
-                                    }
-
-
+                                    } 
                                     ?>
                                 </div>
                             </div>
