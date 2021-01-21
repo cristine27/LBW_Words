@@ -52,7 +52,7 @@
                     <div class="col-3">
                         <h4 class="card-header text-center">Dionisius</h4>
                         <div class="card">
-                            <img src="../img/logo.jpg" class="card-img-top" alt="...">
+                            <img src="../img/foto dionisius.jpg" class="card-img-top" alt="dionisius">
                             <div class="card-body">
                                 <p class="card-text" style="color: black;">Fullstack Developer</p>
                             </div>
@@ -61,7 +61,7 @@
                     <div class="col-3">
                         <h4 class="card-header text-center">Firman</h4>
                         <div class="card">
-                            <img src="../img/logo.jpg" class="card-img-top" alt="...">
+                            <img src="../img/foto firman.jpg" class="card-img-top" alt="firman">
                             <div class="card-body">
                                 <p class="card-text" style="color: black;">Front-End Developer</p>
                             </div>
@@ -70,7 +70,7 @@
                     <div class="col-3">
                         <h4 class="card-header text-center">Yosef</h4>
                         <div class="card">
-                            <img src="../img/logo.jpg" class="card-img-top" alt="...">
+                            <img src="../img/foto yosef.jpg" class="card-img-top" alt="yosef">
                             <div class="card-body">
                                 <p class="card-text" style="color: black;">Front-End Developer</p>
                             </div>
