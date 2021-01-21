@@ -30,7 +30,7 @@ echo $title; ?></h1>
     <div class="row">
         <div class="col-8">
             <div id="contentResult">
-                <h2 id="textD" class="card-header text-center " style="color: blue; font-style: italic"><strong><?php echo ucfirst($word) ?></strong></h2>
+                <h2 id="textD" class="card-header text-center " style="color: blue; font-style: italic"><strong><?php echo ($word) ?></strong></h2>
                 <div class="card-body">
 
                     <?php
@@ -244,5 +244,6 @@ echo $title; ?></h1>
             </div>
         </div>
     </div>
+</div>
 
     <?= $this->endsection(); ?>

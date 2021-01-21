@@ -23,13 +23,18 @@ class Pages extends BaseController
 
 	public function thesaurus()
 	{
+
 		$temp = $this->request->getVar('input');
-		if (isset($temp) && $temp != "") {
-			$input = $this->request->getVar('input');
+		if (isset($_SESSION['input']) && $_SESSION['input'] !=0) {
+			if (isset($temp) && $temp != "") {
+				$input = $this->request->getVar('input');
+			} else {
+				$input = $_SESSION['input'];
+			}
+			return $this->thesaurus->createRes($input);
 		} else {
-			$input = $_SESSION['input'];
+			return $this->thesaurus->index();
 		}
-		return $this->thesaurus->createRes($input);
 	}
 
 	public function about()

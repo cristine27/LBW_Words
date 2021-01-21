@@ -32,15 +32,9 @@ class Thesaurus extends BaseController
                     '0' => 'Not yet'
                 ],
                 'resultRan' => $randomWord['results'],
-                'pronunciation' => [
-                    'all' => 'none'
-                ],
-                'exampleS' => [
-                    '0' => 'none'
-                ],
-                'exampleA' => [
-                    '0' => 'none'
-                ],
+                'pronunciation' =>'none',
+                'exampleS' =>'none',
+                'exampleA' =>'none',
                 'placeholder' => $this->placeholder
             ];
         } else {
@@ -59,15 +53,9 @@ class Thesaurus extends BaseController
                         'definition' => 'Sorry... Defintion for the Word not Available yet'
                     ]
                 ],
-                'pronunciation' => [
-                    'all' => 'none'
-                ],
-                'exampleS' => [
-                    '0' => 'none'
-                ],
-                'exampleA' => [
-                    '0' => 'none'
-                ],
+                'pronunciation' =>'none',
+                'exampleS' => 'none',
+                'exampleA' =>'none',
                 'placeholder' => $this->placeholder
             ];
         }
